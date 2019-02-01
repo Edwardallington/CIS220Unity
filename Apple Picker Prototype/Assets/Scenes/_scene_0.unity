@@ -179,6 +179,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &486025999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1949724054019466, guid: f452a6922f8b3734289d7f49217c7470,
+    type: 2}
+  m_PrefabInternal: {fileID: 1934820682}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9b640a8aede7541b7aa16c84e91a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aaplePrefab: {fileID: 0}
+  applePrefab: {fileID: 486025999}
   speed: 10
   leftAndRightEdge: 20
   chanceToChangeDirections: 0.1

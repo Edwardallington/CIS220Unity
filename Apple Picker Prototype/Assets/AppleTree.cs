@@ -5,7 +5,7 @@ using UnityEngine;
 public class AppleTree : MonoBehaviour {
     // class level variables (inspector variables)
     // prefab for instantiating apples
-    public GameObject aaplePrefab;
+    public GameObject applePrefab;
     // speed at which the AppleTree moves
     public float speed = 1f;
     // distance where the AppleTree turns
@@ -16,8 +16,16 @@ public class AppleTree : MonoBehaviour {
     public float secondsBetweenAppleDrops = 1f;
 	// Use this for initialization
 	void Start () {
-		
+		// dropping apples every second
+	    Invoke("DropApple", 2f);
 	}
+
+    void DropApple()
+    {
+        GameObject apple = Instantiate<GameObject>(applePrefab);
+        apple.transform.position = transform.position;
+        Invoke("DropApple", secondsBetweenAppleDrops);
+    }
 	
 	// Update is called once per frame
 	void Update ()
