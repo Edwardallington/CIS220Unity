@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 23557032615247152}
   - component: {fileID: 135408125887594256}
   - component: {fileID: 54140366483009360}
-  m_Layer: 0
+  - component: {fileID: 114131241085462704}
+  m_Layer: 9
   m_Name: Apple
   m_TagString: Apple
   m_Icon: {fileID: 0}
@@ -100,6 +101,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114131241085462704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949724054019466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d184ce8228b27845a779a962282595e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135408125887594256
 SphereCollider:
   m_ObjectHideFlags: 1
