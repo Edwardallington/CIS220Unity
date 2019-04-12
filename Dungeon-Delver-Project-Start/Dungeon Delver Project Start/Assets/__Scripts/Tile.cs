@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
     public int tileNum;
 
 	// Use this for initialization
-	void SetTile (int eX, int eY, int eTileNum = -1)
+	public void SetTile (int eX, int eY, int eTileNum = -1)
 	{
 	    x = eX;
 	    y = eY;

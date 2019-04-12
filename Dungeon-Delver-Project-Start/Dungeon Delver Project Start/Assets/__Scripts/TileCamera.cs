@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,7 +36,7 @@ public class TileCamera : MonoBehaviour
         // read in the map data
         string[] lines = mapData.text.Split('\n');
         H = lines.Length;
-        string[] tileNums = lines[0].Split('.');
+        string[] tileNums = lines[0].Split(' ');
         W = tileNums.Length;
 
         // system globalization
@@ -48,7 +49,7 @@ public class TileCamera : MonoBehaviour
 
         for (int j = 0; j < H; j++)
         {
-            tileNums = lines[j].Split('.');
+            tileNums = lines[j].Split(' ');
             for (int i = 0; i < W; i++)
             {
                 if (tileNums[i] == "..")
@@ -66,6 +67,28 @@ public class TileCamera : MonoBehaviour
 
         print("Parsed " + SPRITES.Length + "sprites.");
         print("Map size: " + W + " wide by " + H + " high");
+
+        ShowMap();
+    }
+
+    void ShowMap()
+    {
+        TILES = new Tile[W, H];
+
+        // run through the entire map and instantiate Tiles where necssacary
+        for (int j = 0; j < H; j++)
+        {
+            for (int i = 0; i < W; i++)
+            {
+                if (MAP[i, j] != 0)
+                {
+                    Tile Ti = Instantiate<Tile>(tilePrefab);
+                    Ti.transform.SetParent(TILE_ANCHOR);
+                    Ti.SetTile(i, j);
+                    TILES[i, j] = Ti;
+                } // end of if
+            } // end of inner loop
+        }
     }
 
     static public int GET_MAP(int x, int y)
